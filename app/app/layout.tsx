@@ -27,7 +27,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div className="flex-1">{children}</div>
+        <footer style={{ textAlign: "center", padding: "1rem 0", color: "#5d647b", fontSize: "0.9rem" }}>
+          Genus © 2026
+        </footer>
+      </body>
     </html>
   );
 }
