@@ -4,14 +4,12 @@ export default function Home() {
     <main>
       <section className="hero">
         <div style={{ maxWidth: 980, margin: "0 auto", padding: "0 1rem" }}>
-          <p style={{ color: "#5f6a85", textTransform: "uppercase", letterSpacing: "0.16em", fontWeight: 700 }}>
-            Genus — Being Yourself
-          </p>
           <h1 style={{ margin: "0.3rem 0 1rem", fontSize: "clamp(2rem, 6vw, 4rem)", lineHeight: 1.1 }}>
-            Genus is the next-generation consumer brand
+            The next-generation consumer brand
           </h1>
+
           <p style={{ color: "#3d445a", fontSize: "1.1rem", maxWidth: 700 }}>
-            Creating experiences and products supported by a modern technology platform. A sustainable, identity-driven system and early product experience that builds our brand and evolves toward a direct-to-consumer platform.
+            Creating products and experiences supported by a modern technology platform. Sustainable by design, building an identity‑driven system and an early product foundation that shapes who we are, enabling the brand to grow naturally while evolving toward a direct‑to‑consumer platform.
           </p>
         </div>
       </section>
