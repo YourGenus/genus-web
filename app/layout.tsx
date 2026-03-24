@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Genus • AI for modern product teams",
-  description: "Genus is an early-stage AI workspace for prompt engineering, collaboration, and deploy-ready workflows.",
+  title: "Genus • The next-generation consumer brand",
+  description: "Genus is a next-generation consumer brand focused on creating products and experiences supported by a modern technology platform. Sustainable by design, building an identity‑driven system and an early product foundation that shapes who we are, enabling the brand to grow naturally while evolving toward a direct‑to‑consumer platform.",
 };
 
 export default function RootLayout({
