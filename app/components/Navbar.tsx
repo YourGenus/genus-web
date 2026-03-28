@@ -61,8 +61,8 @@ export default function Navbar() {
       {/* MOBILE OVERLAY */}
       {menuOpen && (
         <div className="fixed inset-0 bg-white z-[999] flex flex-col p-6">
-          <div className="flex justify-between items-center mb-10">
-            <button onClick={() => setMenuOpen(false)}>
+          <div className="flex justify-end items-center mb-10">
+            <button onClick={() => setMenuOpen(false)} className="text-gray-900">
               <svg className="h-6 w-6" fill="none" stroke="currentColor">
                 <path
                   strokeLinecap="round"
@@ -73,6 +73,7 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
+
 
           <nav className="flex flex-col space-y-6 text-2xl font-semibold">
             {genres.map((genre) => (
