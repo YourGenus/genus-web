@@ -42,10 +42,29 @@ export default function Home() {
       </section>
 
       <section className="section">
-        <h2 style={{ margin: 0, fontSize: "clamp(1.4rem, 3vw, 2rem)" }}>Philosophy</h2>
+        <h2 style={{ margin: 0, fontSize: "clamp(1.4rem, 3vw, 2rem)" }}>
+          Sustainability by design
+        </h2>
+
         <p style={{ color: "#5f6a85", maxWidth: 760, marginTop: 8 }}>
-          Identity is the core. We build meaningful product experiences from first principles with high-quality.
+          We build products and systems that reduce waste from the start. Explore our open‑source platform shaping the future of responsible products.
         </p>
+
+        <a
+          href="https://packaging-dev.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            marginTop: "1rem",
+            fontSize: "1rem",
+            fontWeight: 500,
+            color: "#000",
+            textDecoration: "underline",
+          }}
+        >
+          Find your Genus →
+        </a>
       </section>
 
       
