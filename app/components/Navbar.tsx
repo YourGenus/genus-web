@@ -62,7 +62,6 @@ export default function Navbar() {
       {menuOpen && (
         <div className="fixed inset-0 bg-white z-[999] flex flex-col p-6">
           <div className="flex justify-between items-center mb-10">
-            <span className="text-xl font-bold">GENUS</span>
             <button onClick={() => setMenuOpen(false)}>
               <svg className="h-6 w-6" fill="none" stroke="currentColor">
                 <path
@@ -75,7 +74,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <nav className="flex flex-col space-y-6 text-lg font-medium">
+          <nav className="flex flex-col space-y-6 text-2xl font-semibold">
             {genres.map((genre) => (
               <Link
                 key={genre.name}
