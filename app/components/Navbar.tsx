@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 
+const genres = [
+  { name: "Citizen", href: "/introducing-citizen" },
+];
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -15,13 +19,28 @@ export default function Navbar() {
               GENUS
             </Link>
 
+            {/* DESKTOP NAV */}
             <nav className="hidden md:flex space-x-10 text-sm font-medium">
-              <Link href="/introducing-citizen" className="hover:text-gray-900">
-                Citizen
-              </Link>
-              <button className="hover:text-gray-900">Genres</button>
+              <div className="relative group">
+                <button className="hover:text-gray-900">
+                  Genres
+                </button>
+
+                <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  {genres.map((genre) => (
+                    <Link
+                      key={genre.name}
+                      href={genre.href}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    >
+                      {genre.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </nav>
 
+            {/* MOBILE BUTTON */}
             <button
               className="md:hidden text-gray-900"
               onClick={() => setMenuOpen(true)}
@@ -39,8 +58,9 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* MOBILE OVERLAY */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-white z-50 flex flex-col p-6">
+        <div className="fixed inset-0 bg-white z-[999] flex flex-col p-6">
           <div className="flex justify-between items-center mb-10">
             <span className="text-xl font-bold">GENUS</span>
             <button onClick={() => setMenuOpen(false)}>
@@ -56,10 +76,15 @@ export default function Navbar() {
           </div>
 
           <nav className="flex flex-col space-y-6 text-lg font-medium">
-            <Link href="/introducing-citizen" onClick={() => setMenuOpen(false)}>
-              Citizen
-            </Link>
-            <button className="text-left">Genres</button>
+            {genres.map((genre) => (
+              <Link
+                key={genre.name}
+                href={genre.href}
+                onClick={() => setMenuOpen(false)}
+              >
+                {genre.name}
+              </Link>
+            ))}
           </nav>
         </div>
       )}
