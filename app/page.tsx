@@ -1,4 +1,5 @@
-/* filepath: /workspaces/genus-web/app/app/page.tsx */
+import MailchimpForm from './components/MailchimpForm';
+
 export default function Home() {
   return (
     <main>
@@ -9,7 +10,7 @@ export default function Home() {
           </h1>
 
           <p style={{ color: "#3d445a", fontSize: "1.1rem", maxWidth: 700 }}>
-            Creating products and experiences supported by a modern technology platform. Sustainable by design, building an identity‑driven system and an early product foundation that shapes who we are, enabling the brand to grow naturally while evolving toward a direct‑to‑consumer platform.
+            Creating products and experiences supported by a modern technology platform. Sustainable by design, building an identity‑driven system and an early product foundation that shapes who[...]
           </p>
         </div>
       </section>
@@ -67,7 +68,9 @@ export default function Home() {
         </a>
       </section>
 
-      
+      <section className="section" style={{ marginTop: "3rem", borderTop: "1px solid #e0e0e0", paddingTop: "2rem" }}>
+        <MailchimpForm />
+      </section>
     </main>
   );
 }
