@@ -1,9 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function MailchimpForm() {
-  // Local handlers live inside this Client Component (no functions passed from server).
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [message, setMessage] = useState('')
+
   const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     e.currentTarget.style.borderColor = '#4f5f84'
     e.currentTarget.style.outline = 'none'
@@ -26,62 +29,51 @@ export default function MailchimpForm() {
     e.currentTarget.style.transform = 'scale(1)'
   }
 
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setStatus('loading')
+    setMessage('')
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      const json = await res.json()
+      if (!res.ok) {
+        setStatus('error')
+        setMessage(json.error || 'Subscription failed')
+        return
+      }
+      setStatus('success')
+      setMessage('Thanks — check your inbox!')
+      setEmail('')
+    } catch (err: any) {
+      setStatus('error')
+      setMessage(err?.message || 'Network error')
+    }
+  }
+
   return (
     <div id="mc_embed_shell" style={{ width: '100%' }}>
       <div id="mc_embed_signup">
         <form
-          action="https://yourgenus.us4.list-manage.com/subscribe/post?u=6bbf0cf6a5e82d78ad39f1769&amp;id=9ee94aa0e3&amp;f_id=000331e1f0"
-          method="post"
+          onSubmit={handleSubmit}
           className="validate"
-          target="_self"
           noValidate
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1.5rem',
-          }}
+          style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
         >
           <div id="mc_embed_signup_scroll">
-            <h2
-              style={{
-                margin: 0,
-                fontSize: 'clamp(1.4rem, 3vw, 2rem)',
-                color: '#1f2430',
-                marginBottom: '0.5rem',
-              }}
-            >
+            <h2 style={{ margin: 0, fontSize: 'clamp(1.4rem, 3vw, 2rem)', color: '#1f2430', marginBottom: '0.5rem' }}>
               Join the pre-order waitlist
             </h2>
-            <p
-              style={{
-                margin: '0.5rem 0 0 0',
-                color: '#5f6a85',
-                fontSize: '1rem',
-              }}
-            >
-              Be the first to experience Genus
-            </p>
+            <p style={{ margin: '0.5rem 0 0 0', color: '#5f6a85', fontSize: '1rem' }}>Be the first to experience Genus</p>
           </div>
 
-          <div
-            className="mc-field-group"
-            style={{
-              display: 'flex',
-              gap: '0.75rem',
-              alignItems: 'flex-end',
-            }}
-          >
+          <div className="mc-field-group" style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-end' }}>
             <div style={{ flex: 1 }}>
-              <label
-                htmlFor="mce-EMAIL"
-                style={{
-                  display: 'block',
-                  marginBottom: '0.5rem',
-                  fontSize: '0.95rem',
-                  color: '#5f6a85',
-                  fontWeight: 500,
-                }}
-              >
+              <label htmlFor="mce-EMAIL" style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.95rem', color: '#5f6a85', fontWeight: 500 }}>
                 Email Address
               </label>
               <input
@@ -91,7 +83,8 @@ export default function MailchimpForm() {
                 id="mce-EMAIL"
                 required
                 placeholder="your@email.com"
-                defaultValue=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 style={{
                   width: '100%',
                   padding: '0.875rem 1rem',
@@ -105,6 +98,7 @@ export default function MailchimpForm() {
                 }}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
+                aria-label="Email address"
               />
             </div>
 
@@ -112,6 +106,7 @@ export default function MailchimpForm() {
               type="submit"
               name="subscribe"
               id="mc-embedded-subscribe"
+              disabled={status === 'loading'}
               style={{
                 padding: '0.875rem 2rem',
                 fontSize: '1rem',
@@ -120,7 +115,7 @@ export default function MailchimpForm() {
                 backgroundColor: '#1f2430',
                 border: 'none',
                 borderRadius: '8px',
-                cursor: 'pointer',
+                cursor: status === 'loading' ? 'wait' : 'pointer',
                 transition: 'background-color 0.2s ease, transform 0.1s ease',
                 whiteSpace: 'nowrap',
               }}
@@ -128,40 +123,20 @@ export default function MailchimpForm() {
               onMouseLeave={handleBtnMouseLeave}
               onMouseDown={handleBtnMouseDown}
               onMouseUp={handleBtnMouseUp}
+              aria-busy={status === 'loading'}
             >
-              Subscribe
+              {status === 'loading' ? 'Subscribing…' : 'Subscribe'}
             </button>
           </div>
 
           <div id="mce-responses" className="clear">
-            <div
-              className="response"
-              id="mce-error-response"
-              style={{
-                display: 'none',
-                color: '#d32f2f',
-                fontSize: '0.95rem',
-              }}
-            />
-            <div
-              className="response"
-              id="mce-success-response"
-              style={{
-                display: 'none',
-                color: '#388e3c',
-                fontSize: '0.95rem',
-              }}
-            />
+            {message && (
+              <div style={{ fontSize: '0.95rem', color: status === 'error' ? '#d32f2f' : '#388e3c' }}>{message}</div>
+            )}
           </div>
 
-          {/* Mailchimp honeypot field */}
           <div aria-hidden="true" style={{ position: 'absolute', left: '-5000px' }}>
-            <input
-              type="text"
-              name="b_6bbf0cf6a5e82d78ad39f1769_9ee94aa0e3"
-              tabIndex={-1}
-              defaultValue=""
-            />
+            <input type="text" name="b_6bbf0cf6a5e82d78ad39f1769_9ee94aa0e3" tabIndex={-1} defaultValue="" />
           </div>
         </form>
       </div>
