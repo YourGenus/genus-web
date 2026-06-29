@@ -10,7 +10,7 @@ export default function Home() {
           </h1>
 
           <p style={{ color: "#3d445a", fontSize: "1.1rem", maxWidth: 700 }}>
-            Creating products and experiences supported by a modern technology platform. Sustainable by design, building an identity‑driven system and an early product foundation that shapes who[...]
+            Experience supported by a modern technology platform. Sustainable by design. Identity‑driven.
           </p>
         </div>
       </section>
