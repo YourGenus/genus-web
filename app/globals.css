@@ -20,9 +20,8 @@ body {
   background: #ffffff;
   background-repeat: no-repeat;
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-lato), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-
 }
 
 a { color: inherit; text-decoration: none; }
