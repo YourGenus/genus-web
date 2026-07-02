@@ -37,7 +37,6 @@ const styles = {
   intro: {
     margin: "0 0 1rem",
     maxWidth: 760,
-    color: "#3f455c",
     fontSize: "1.05rem",
     lineHeight: 1.6,
   } as const,
@@ -47,7 +46,6 @@ const styles = {
   } as const,
   bodyCopy: {
     maxWidth: 760,
-    color: "#3f455c",
     fontSize: "1.05rem",
     lineHeight: 1.6,
   } as const,
