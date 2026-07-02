@@ -10,7 +10,7 @@ export default function Home() {
           </h1>
 
           <p style={{ color: "#3d445a", fontSize: "1.1rem", maxWidth: 700 }}>
-            Engineered for the identity-driven future.
+            Engineered for the <a href="/index/identity-driven-future">identity-driven future.</a>
           </p>
         </div>
       </section>
