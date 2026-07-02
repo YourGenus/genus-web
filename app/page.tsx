@@ -48,7 +48,7 @@ export default function Home() {
         </h2>
 
         <p style={{ color: "#5f6a85", maxWidth: 760, marginTop: 8 }}>
-          We build products and systems that reduce waste from the start. Explore our open‑source platform shaping the future of responsible products.
+          We reduce waste from the start. Explore our the future of responsible products.
         </p>
 
         <a
