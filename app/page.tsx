@@ -10,7 +10,7 @@ export default function Home() {
           </h1>
 
           <p style={{ color: "#3d445a", fontSize: "1.1rem", maxWidth: 700 }}>
-            Experience supported by a modern technology. Sustainable by design. Identity‑driven.
+            Engineered for the identity-driven future.
           </p>
         </div>
       </section>
