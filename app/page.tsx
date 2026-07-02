@@ -26,7 +26,7 @@ export default function Home() {
         }}
       >
         <a
-          href="/introducing-citizen"
+          href="/index/introducing-citizen"
           style={{
             display: "block",
             textDecoration: "none",

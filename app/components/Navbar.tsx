@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const genres = [
-  { name: "Citizen", href: "/introducing-citizen" },
+  { name: "Citizen", href: "/index/introducing-citizen" },
 ];
 
 export default function Navbar() {
