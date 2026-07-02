@@ -30,6 +30,11 @@ a {
   text-underline-offset: 0.18em;
 }
 
+.site-header a,
+.site-header button {
+  text-decoration: none;
+}
+
 section {
   width: min(1100px, 92vw);
   margin: 0 auto;
