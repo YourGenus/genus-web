@@ -35,7 +35,7 @@ const styles = {
     lineHeight: 1.08,
   } as const,
   intro: {
-    margin: "0 0 2rem",
+    margin: "0 0 3rem",
     maxWidth: 760,
     fontSize: "1.05rem",
     lineHeight: 1.6,
