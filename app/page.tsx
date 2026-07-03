@@ -10,7 +10,7 @@ export default function Home() {
           </h1>
 
           <p style={{ color: "#3d445a", fontSize: "1.1rem", maxWidth: 700 }}>
-            Experience supported by a modern technology. Sustainable by design. Identity‑driven.
+            Engineered for the <a href="/index/identity-driven-future">identity-driven future.</a>
           </p>
         </div>
       </section>
@@ -26,7 +26,7 @@ export default function Home() {
         }}
       >
         <a
-          href="/introducing-citizen"
+          href="/index/introducing-citizen"
           style={{
             display: "block",
             textDecoration: "none",
@@ -48,7 +48,7 @@ export default function Home() {
         </h2>
 
         <p style={{ color: "#5f6a85", maxWidth: 760, marginTop: 8 }}>
-          We build products and systems that reduce waste from the start. Explore our open‑source platform shaping the future of responsible products.
+          We reduce waste from the beginning. Explore the future of responsible products.
         </p>
 
         <a
