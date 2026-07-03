@@ -9,10 +9,25 @@ export default function IntroducingCitizen() {
       body={[
         "Experience designed from first principles as the stable foundation of the Genus system.",
         "CITIZEN is crafted for those who value clarity, purpose, and quiet confidence. Simplicity in principle. Every line, surface, and material is considered, refined, and reduced until only what matters remains.",
-        "We introduce sustainability by design. A fully aluminium shell gives CITIZEN its strength and precision, while PCR (Post‑Consumer Recycled) materials in the insert reinforce our commitment to responsible creation. This combination allows us to stand out — a presence that is calm, logical, versatile, and timeless.",
+        "We introduce sustainability by design. A fully aluminium shell for strength, while PCR (Post‑Consumer Recycled) materials in the insert reinforce our commitment to responsible creation.",
         "It's designed to endure, to adapt, and to feel right — today, tomorrow, and long after trends fade.",
-        "Neutrality that resonates. Experience that enables the future. Sustainability by design.",
+      <a
+          href="https://packaging-dev.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            marginTop: "1rem",
+            fontSize: "1rem",
+            fontWeight: 500,
+            color: "#000",
+            textDecoration: "underline",
+          }}
+        >
+          Find your Genus →
+        </a>
       ]}
+      
     />
   );
 }
