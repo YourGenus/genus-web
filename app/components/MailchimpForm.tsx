@@ -66,7 +66,7 @@ export default function MailchimpForm() {
         >
           <div id="mc_embed_signup_scroll">
             <h2 style={{ margin: 0, fontSize: 'clamp(1.4rem, 3vw, 2rem)', color: '#1f2430', marginBottom: '0.5rem' }}>
-              Join the pre-order waitlist
+              Sign up to get early access
             </h2>
             <p style={{ margin: '0.5rem 0 0 0', color: '#5f6a85', fontSize: '1rem' }}>Be the first to experience Genus</p>
           </div>
